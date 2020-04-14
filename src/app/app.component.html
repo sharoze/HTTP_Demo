@@ -1,0 +1,41 @@
+<body style="background-color: aqua;">
+<button (click)="onGetAll()" >GETALL</button>
+<button (click)="onGetById()" >GET(Specific)</button>
+<button (click)="onPost()" >POST</button>
+<button (click)="onPut()" >PUT</button>
+<button (click)="onPatch()">PATCH</button>
+<button (click)="onDeleteById()">DELETE</button>
+
+
+<div *ngIf="showByGetDelete" >
+  <label for="id">ID (GetById)   </label>
+<input type="text" name="id" id="id"  placeholder="Enter the ID..." #inputID (keyup)="GetById(inputID.value)" />
+</div>
+
+<div *ngIf="showPostPutPatch">
+  <!-- <form #f >
+
+  </form> -->
+</div>
+
+<div>
+  <table>
+    <tr>
+      <th>userId</th>
+      <th>id</th>
+      <th>title</th>
+      <th>body</th>
+    </tr>
+    <tr *ngFor="let item of sampleModels">
+      <td>{{item.userId}}</td>
+
+      <td>{{item.id}}</td>
+
+      <td>{{item.title}}</td>
+
+      <td>{{item.body}}</td>
+    </tr>
+  </table>
+</div>
+
+</body>
